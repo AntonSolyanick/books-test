@@ -1,7 +1,10 @@
 from fastapi import FastAPI
 
+from api.routes.routes import endPoints
+
+
 app = FastAPI()
 
-@app.get("/api/python")
-def hello_world():
-    return {"message": "Hello World"}
+
+
+app.include_router(endPoints)
